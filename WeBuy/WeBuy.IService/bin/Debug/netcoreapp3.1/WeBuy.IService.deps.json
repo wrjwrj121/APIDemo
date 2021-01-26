@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "WeBuy.IService/1.0.0": {
+        "dependencies": {
+          "WeBuy.Model": "1.0.0"
+        },
+        "runtime": {
+          "WeBuy.IService.dll": {}
+        }
+      },
+      "WeBuy.Model/1.0.0": {
+        "runtime": {
+          "WeBuy.Model.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WeBuy.IService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WeBuy.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

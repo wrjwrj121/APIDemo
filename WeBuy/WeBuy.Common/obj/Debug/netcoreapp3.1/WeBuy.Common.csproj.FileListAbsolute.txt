@@ -1,0 +1,12 @@
+C:\_wang\Other\core\API\WeBuy\WeBuy.Common\bin\Debug\netcoreapp3.1\WeBuy.Common.deps.json
+C:\_wang\Other\core\API\WeBuy\WeBuy.Common\bin\Debug\netcoreapp3.1\WeBuy.Common.dll
+C:\_wang\Other\core\API\WeBuy\WeBuy.Common\bin\Debug\netcoreapp3.1\WeBuy.Common.pdb
+C:\_wang\Other\core\API\WeBuy\WeBuy.Common\bin\Debug\netcoreapp3.1\WeBuy.Model.dll
+C:\_wang\Other\core\API\WeBuy\WeBuy.Common\bin\Debug\netcoreapp3.1\WeBuy.Model.pdb
+C:\_wang\Other\core\API\WeBuy\WeBuy.Common\obj\Debug\netcoreapp3.1\WeBuy.Common.csprojAssemblyReference.cache
+C:\_wang\Other\core\API\WeBuy\WeBuy.Common\obj\Debug\netcoreapp3.1\WeBuy.Common.AssemblyInfoInputs.cache
+C:\_wang\Other\core\API\WeBuy\WeBuy.Common\obj\Debug\netcoreapp3.1\WeBuy.Common.AssemblyInfo.cs
+C:\_wang\Other\core\API\WeBuy\WeBuy.Common\obj\Debug\netcoreapp3.1\WeBuy.Common.csproj.CoreCompileInputs.cache
+C:\_wang\Other\core\API\WeBuy\WeBuy.Common\obj\Debug\netcoreapp3.1\WeBuy.Common.csproj.CopyComplete
+C:\_wang\Other\core\API\WeBuy\WeBuy.Common\obj\Debug\netcoreapp3.1\WeBuy.Common.dll
+C:\_wang\Other\core\API\WeBuy\WeBuy.Common\obj\Debug\netcoreapp3.1\WeBuy.Common.pdb

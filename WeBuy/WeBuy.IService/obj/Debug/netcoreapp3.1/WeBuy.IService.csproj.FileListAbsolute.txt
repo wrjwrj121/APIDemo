@@ -1,0 +1,12 @@
+C:\_wang\Other\core\API\WeBuy\WeBuy.IService\bin\Debug\netcoreapp3.1\WeBuy.IService.deps.json
+C:\_wang\Other\core\API\WeBuy\WeBuy.IService\bin\Debug\netcoreapp3.1\WeBuy.IService.dll
+C:\_wang\Other\core\API\WeBuy\WeBuy.IService\bin\Debug\netcoreapp3.1\WeBuy.IService.pdb
+C:\_wang\Other\core\API\WeBuy\WeBuy.IService\bin\Debug\netcoreapp3.1\WeBuy.Model.dll
+C:\_wang\Other\core\API\WeBuy\WeBuy.IService\bin\Debug\netcoreapp3.1\WeBuy.Model.pdb
+C:\_wang\Other\core\API\WeBuy\WeBuy.IService\obj\Debug\netcoreapp3.1\WeBuy.IService.csprojAssemblyReference.cache
+C:\_wang\Other\core\API\WeBuy\WeBuy.IService\obj\Debug\netcoreapp3.1\WeBuy.IService.AssemblyInfoInputs.cache
+C:\_wang\Other\core\API\WeBuy\WeBuy.IService\obj\Debug\netcoreapp3.1\WeBuy.IService.AssemblyInfo.cs
+C:\_wang\Other\core\API\WeBuy\WeBuy.IService\obj\Debug\netcoreapp3.1\WeBuy.IService.csproj.CoreCompileInputs.cache
+C:\_wang\Other\core\API\WeBuy\WeBuy.IService\obj\Debug\netcoreapp3.1\WeBuy.IService.csproj.CopyComplete
+C:\_wang\Other\core\API\WeBuy\WeBuy.IService\obj\Debug\netcoreapp3.1\WeBuy.IService.dll
+C:\_wang\Other\core\API\WeBuy\WeBuy.IService\obj\Debug\netcoreapp3.1\WeBuy.IService.pdb
