@@ -6453,11 +6453,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\_wang\\Other\\core\\API\\WeBuy\\WeBuy\\WeBuy.csproj",
+      "projectUniqueName": "C:\\_wang\\Other\\core\\myGithub\\APIDemo\\WeBuy\\WeBuy\\WeBuy.csproj",
       "projectName": "WeBuy",
-      "projectPath": "C:\\_wang\\Other\\core\\API\\WeBuy\\WeBuy\\WeBuy.csproj",
+      "projectPath": "C:\\_wang\\Other\\core\\myGithub\\APIDemo\\WeBuy\\WeBuy\\WeBuy.csproj",
       "packagesPath": "C:\\Users\\edz\\.nuget\\packages\\",
-      "outputPath": "C:\\_wang\\Other\\core\\API\\WeBuy\\WeBuy\\obj\\",
+      "outputPath": "C:\\_wang\\Other\\core\\myGithub\\APIDemo\\WeBuy\\WeBuy\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\edz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6474,11 +6474,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\_wang\\Other\\core\\API\\WeBuy\\WeBuy.IService\\WeBuy.IService.csproj": {
-              "projectPath": "C:\\_wang\\Other\\core\\API\\WeBuy\\WeBuy.IService\\WeBuy.IService.csproj"
+            "C:\\_wang\\Other\\core\\myGithub\\APIDemo\\WeBuy\\WeBuy.IService\\WeBuy.IService.csproj": {
+              "projectPath": "C:\\_wang\\Other\\core\\myGithub\\APIDemo\\WeBuy\\WeBuy.IService\\WeBuy.IService.csproj"
             },
-            "C:\\_wang\\Other\\core\\API\\WeBuy\\WeBuy.Service\\WeBuy.Service.csproj": {
-              "projectPath": "C:\\_wang\\Other\\core\\API\\WeBuy\\WeBuy.Service\\WeBuy.Service.csproj"
+            "C:\\_wang\\Other\\core\\myGithub\\APIDemo\\WeBuy\\WeBuy.Service\\WeBuy.Service.csproj": {
+              "projectPath": "C:\\_wang\\Other\\core\\myGithub\\APIDemo\\WeBuy\\WeBuy.Service\\WeBuy.Service.csproj"
             }
           }
         }

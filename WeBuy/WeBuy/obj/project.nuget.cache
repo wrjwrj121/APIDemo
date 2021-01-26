@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EeDJ5TXevXRmnVWfR2K+MZHBrGIeuaKS3bOI0ooXT00D1mvDZrS6myrtNdVY2NcEx94LKSotj6QRqZuNVSLbAg==",
+  "dgSpecHash": "T/zMRSQOPBlEq07m8wJSAOe76gZi4zg39BuqhH36Z9zBUONYkk5T4Ett+cmgWJoShybATjdZKF5Sgyt1lQiDPQ==",
   "success": true,
-  "projectFilePath": "C:\\_wang\\Other\\core\\API\\WeBuy\\WeBuy\\WeBuy.csproj",
+  "projectFilePath": "C:\\_wang\\Other\\core\\myGithub\\APIDemo\\WeBuy\\WeBuy\\WeBuy.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\edz\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\edz\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",

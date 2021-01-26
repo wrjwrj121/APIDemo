@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "stIApd2XxXStM/UysDUdsUGSp/vPrQ+e07jGX3OIynzJNP6Lbqgg8WAR70+SVfKMlNcYUYTgWq1DTUljDKbFzw==",
+  "dgSpecHash": "TFG6i8BC5Fc47OMnP/cNApSJn2br2fGLygAa3NCxcoX2pzTLTF7NzbokIA7qTdGVGh2wGrqM3XFV4VyrA0wNAw==",
   "success": true,
-  "projectFilePath": "C:\\_wang\\Other\\core\\API\\WeBuy\\WeBuy.IService\\WeBuy.IService.csproj",
+  "projectFilePath": "C:\\_wang\\Other\\core\\myGithub\\APIDemo\\WeBuy\\WeBuy.IService\\WeBuy.IService.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

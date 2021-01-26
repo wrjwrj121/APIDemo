@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cxSEYZKfd/cMJ8O9uaoDaBaVLV04Ai6jO2pQ7rqgWIyLC7OV6RAtCKlFJAJfgjTaDMgTmDBnpIQgCRYM+2eCAQ==",
+  "dgSpecHash": "lCbuakjFBW+wbvorCz2i43xxZrNMRhQWyxoWlaEQjGUQU+yE0f+j0mSKi1p3ztvQdGF32II2t2WD8E2aqtOyGw==",
   "success": true,
-  "projectFilePath": "C:\\_wang\\Other\\core\\API\\WeBuy\\WeBuy.Service\\WeBuy.Service.csproj",
+  "projectFilePath": "C:\\_wang\\Other\\core\\myGithub\\APIDemo\\WeBuy\\WeBuy.Service\\WeBuy.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\edz\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.2\\microsoft.entityframeworkcore.5.0.2.nupkg.sha512",
     "C:\\Users\\edz\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.2\\microsoft.entityframeworkcore.abstractions.5.0.2.nupkg.sha512",
