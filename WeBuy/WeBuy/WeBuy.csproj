@@ -16,6 +16,7 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WeBuy.Common\WeBuy.Common.csproj" />
     <ProjectReference Include="..\WeBuy.IService\WeBuy.IService.csproj" />
     <ProjectReference Include="..\WeBuy.Service\WeBuy.Service.csproj" />
   </ItemGroup>

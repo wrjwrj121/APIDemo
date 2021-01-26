@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,14 +16,25 @@ namespace WeBuy.Service.User
     {
 
         private readonly EFCoreContext db;
+        private readonly IMapper mapper;
 
-        public LoginService(EFCoreContext _db)
+        public LoginService(EFCoreContext _db, IMapper _mapper)
         {
             db = _db;
+            mapper = _mapper;
         }
-        public PageAPIResult<UserInfo> GetUsers()
+        /// <summary>
+        /// list
+        /// </summary>
+        /// <returns></returns>
+        public async Task<PageAPIResult<List<UserInfoDTO>>> GetUsers()
         {
-            throw new NotImplementedException();
+            var users = await db.UserInfo.Where(a => a.IsEnabled == true).ToListAsync();
+            var dto = mapper.Map<List<UserInfoDTO>>(users);
+            var result = new PageAPIResult<List<UserInfoDTO>>();
+            result.data = dto;
+            result.Success();
+            return result;
         }
        /// <summary>
        /// 登录
@@ -29,10 +42,10 @@ namespace WeBuy.Service.User
        /// <param name="userName"></param>
        /// <param name="passWord"></param>
        /// <returns></returns>
-        public APIResult Login(string userName, string passWord)
+        public async Task<APIResult> Login(string userName, string passWord)
         {
             var result = new APIResult();
-            var isSuccess =  db.UserInfo.Where(a => a.UserName == userName && a.PassWord == passWord).Any();
+            var isSuccess = await db.UserInfo.Where(a => a.UserName == userName && a.PassWord == passWord).AnyAsync();
 
             if (isSuccess)
                 result.Success("登录成功");

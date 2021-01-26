@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WeBuy.IService.User;
+using WeBuy.Model.User;
 using WeBuyModel.Common;
 
 namespace WeBuy.Controllers
@@ -26,25 +27,18 @@ namespace WeBuy.Controllers
         /// <param name="passWord"></param>
         /// <returns></returns>
         [HttpGet]
-        public APIResult UserLogin(string userName, string passWord) 
+        public async Task<APIResult> UserLogin(string userName, string passWord) 
         {
             var result = new APIResult();
-            result =  service.Login(userName,passWord);
+            result = await service.Login(userName,passWord);
             return result;
         }
         [HttpGet]
-        public void Test()
+        public async Task<PageAPIResult<List<UserInfoDTO>>> GetUsers() 
         {
-            try
-            {
-                int i = 0;
-                var t = 9 / i;
-                Console.WriteLine(t);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            var result = new PageAPIResult<List<UserInfoDTO>>();
+            result =await service.GetUsers();
+            return result;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace WeBuy.IService.User
 {
    public   interface ILoginService
     {
-        PageAPIResult<UserInfo> GetUsers();
-        APIResult Login(string userName ,string passWord);
+        Task<PageAPIResult<List<UserInfoDTO>>> GetUsers();
+        Task<APIResult> Login(string userName ,string passWord);
     }
 }

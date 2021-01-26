@@ -1,9 +1,0 @@
-C:\_wang\Other\core\API\WeBuy\WeBuyModel\bin\Debug\netcoreapp3.1\WeBuy.Model.deps.json
-C:\_wang\Other\core\API\WeBuy\WeBuyModel\bin\Debug\netcoreapp3.1\WeBuy.Model.dll
-C:\_wang\Other\core\API\WeBuy\WeBuyModel\bin\Debug\netcoreapp3.1\WeBuy.Model.pdb
-C:\_wang\Other\core\API\WeBuy\WeBuyModel\obj\Debug\netcoreapp3.1\WeBuy.Model.csprojAssemblyReference.cache
-C:\_wang\Other\core\API\WeBuy\WeBuyModel\obj\Debug\netcoreapp3.1\WeBuy.Model.AssemblyInfoInputs.cache
-C:\_wang\Other\core\API\WeBuy\WeBuyModel\obj\Debug\netcoreapp3.1\WeBuy.Model.AssemblyInfo.cs
-C:\_wang\Other\core\API\WeBuy\WeBuyModel\obj\Debug\netcoreapp3.1\WeBuy.Model.csproj.CoreCompileInputs.cache
-C:\_wang\Other\core\API\WeBuy\WeBuyModel\obj\Debug\netcoreapp3.1\WeBuy.Model.dll
-C:\_wang\Other\core\API\WeBuy\WeBuyModel\obj\Debug\netcoreapp3.1\WeBuy.Model.pdb
