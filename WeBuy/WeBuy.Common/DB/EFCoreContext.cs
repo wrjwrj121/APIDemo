@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using WeBuy.Model.System;
 using WeBuy.Model.User;
 
 namespace WeBuy.Common
@@ -12,6 +13,7 @@ namespace WeBuy.Common
         {
         }
         public DbSet<UserInfo> UserInfo { get; set; }
+        public DbSet<SystemLog> SystemLog { get; set; }
         /// <summary>
         /// 
         /// </summary>

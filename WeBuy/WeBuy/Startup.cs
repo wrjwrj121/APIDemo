@@ -72,6 +72,8 @@ namespace WeBuy
 
             services.AddControllers(opt => 
             {
+                opt.Filters.Add<ActionFilter>();
+
                 opt.Filters.Add(typeof(GlobalException));
 
             });

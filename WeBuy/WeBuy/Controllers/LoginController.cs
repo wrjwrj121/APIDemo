@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using WeBuy.IService.User;
@@ -13,6 +14,7 @@ namespace WeBuy.Controllers
     [Route("api/[controller]/[action]")]
     [ApiExplorerSettings(GroupName = "User")]
     [ApiController]
+    [Description("登录")]
     public class LoginController : ControllerBase
     {
         private readonly ILoginService service;
@@ -27,17 +29,17 @@ namespace WeBuy.Controllers
         /// <param name="passWord"></param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<APIResult> UserLogin(string userName, string passWord) 
+        public async Task<DataAPIResult<LoginDTO>> UserLogin(string userName, string passWord) 
         {
-            var result = new APIResult();
+            var result = new DataAPIResult<LoginDTO>();
             result = await service.Login(userName,passWord);
             return result;
         }
         [HttpGet]
-        public async Task<PageAPIResult<List<UserInfoDTO>>> GetUsers() 
+        public async Task<PageAPIResult<UserInfoDTO>> Query() 
         {
-            var result = new PageAPIResult<List<UserInfoDTO>>();
-            result =await service.GetUsers();
+            var result = new PageAPIResult<UserInfoDTO>();
+            result =await service.Query();
             return result;
         }
     }

@@ -33,7 +33,12 @@ namespace WeBuyModel.Common
         public int PageIndex { get; set; } = 1;
         public int PageSize { get; set; } = 10;
 
-        public T data { get; set; }
+        public IList<T> data { get; set; }
 
+    }
+
+    public class DataAPIResult<T> :APIResult
+    {
+        public T data { get; set; }
     }
 }

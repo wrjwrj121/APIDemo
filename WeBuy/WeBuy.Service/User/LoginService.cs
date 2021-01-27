@@ -27,12 +27,14 @@ namespace WeBuy.Service.User
         /// list
         /// </summary>
         /// <returns></returns>
-        public async Task<PageAPIResult<List<UserInfoDTO>>> GetUsers()
+        public async Task<PageAPIResult<UserInfoDTO>> Query()
         {
             var users = await db.UserInfo.Where(a => a.IsEnabled == true).ToListAsync();
             var dto = mapper.Map<List<UserInfoDTO>>(users);
-            var result = new PageAPIResult<List<UserInfoDTO>>();
-            result.data = dto;
+            var result = new PageAPIResult<UserInfoDTO>
+            {
+                data = dto
+            };
             result.Success();
             return result;
         }
@@ -42,15 +44,24 @@ namespace WeBuy.Service.User
        /// <param name="userName"></param>
        /// <param name="passWord"></param>
        /// <returns></returns>
-        public async Task<APIResult> Login(string userName, string passWord)
+        public async Task<DataAPIResult<LoginDTO>> Login(string userName, string passWord)
         {
-            var result = new APIResult();
+            var result = new DataAPIResult<LoginDTO>();
             var isSuccess = await db.UserInfo.Where(a => a.UserName == userName && a.PassWord == passWord).AnyAsync();
 
             if (isSuccess)
+            {
+                result.data = new LoginDTO()
+                {
+                    Token = "sucess"
+                };
                 result.Success("登录成功");
+            }
             else
+            {
                 result.Fail("登录失败");
+            }
+               
             return result;
         }
     }
