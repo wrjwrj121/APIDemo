@@ -12,7 +12,7 @@ using WeBuyModel.Common;
 namespace WeBuy.Controllers
 {
     [Route("api/[controller]/[action]")]
-    [ApiExplorerSettings(GroupName = "User")]
+    [ApiExplorerSettings(GroupName = "Authorize")]
     [ApiController]
     [Description("登录")]
     public class LoginController : ControllerBase
@@ -33,13 +33,6 @@ namespace WeBuy.Controllers
         {
             var result = new DataAPIResult<LoginDTO>();
             result = await service.Login(userName,passWord);
-            return result;
-        }
-        [HttpGet]
-        public async Task<PageAPIResult<UserInfoDTO>> Query() 
-        {
-            var result = new PageAPIResult<UserInfoDTO>();
-            result =await service.Query();
             return result;
         }
     }

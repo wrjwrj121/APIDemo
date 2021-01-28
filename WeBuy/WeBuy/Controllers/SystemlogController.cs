@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
+using WeBuy.Controllers.Base;
 using WeBuy.IService.System;
 using WeBuy.Model.System;
 using WeBuyModel.Common;
@@ -14,7 +16,7 @@ namespace WeBuy.Controllers
     [ApiExplorerSettings(GroupName = "Base")]
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class SystemlogController : ControllerBase
+    public class SystemlogController : MyBaseController
     {
         private readonly ISystemLogService service;
         public SystemlogController(ISystemLogService _service) 
@@ -26,7 +28,7 @@ namespace WeBuy.Controllers
         /// 分页查询
         /// </summary>
         /// <returns></returns>
-        [HttpPost]
+        [HttpGet]
         public async Task<PageAPIResult<SystemLog>> Query()
         {
             return await service.Query();
