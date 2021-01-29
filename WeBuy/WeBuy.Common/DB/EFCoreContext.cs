@@ -14,6 +14,10 @@ namespace WeBuy.Common
         }
         public DbSet<UserInfo> UserInfo { get; set; }
         public DbSet<SystemLog> SystemLog { get; set; }
+        public DbSet<MenuInfo> MenuInfo { get; set; }
+        public DbSet<RoleInfo> RoleInfo { get; set; }
+        public DbSet<UserRole> UserRole { get; set; }
+        public DbSet<RoleMenu> RoleMenu { get; set; }
         /// <summary>
         /// 
         /// </summary>

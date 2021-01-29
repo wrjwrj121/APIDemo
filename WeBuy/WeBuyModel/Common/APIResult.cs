@@ -13,7 +13,7 @@ namespace WeBuyModel.Common
 
         public string Message { get; set; }
 
-        public void Success(string message ="请求成功") 
+        public void Success(string message = "请求成功")
         {
             this.Code = 200;
             Message = message;
@@ -23,6 +23,23 @@ namespace WeBuyModel.Common
             this.Code = 500;
             Message = message;
         }
+        //public static APIResult Success(string message = "请求成功")
+        //{
+        //    return new APIResult()
+        //    {
+        //        Code = 200,
+        //        Message = message,
+        //    };
+        //}
+        //public static APIResult Fail(string message = "请求失败") 
+        //{
+        //    return new APIResult()
+        //    {
+        //        Code = 500,
+        //        Message = message,
+        //    };
+        //}
+
     }
     /// <summary>
     /// 分页

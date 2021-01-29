@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace WeBuy.Model.User
 {
-   public class UserInfoDTO
+    public class RoleInfo
     {
+        [Key]
         public string GUID { get; set; }
         public string Name { get; set; }
-        public string UserName { get; set; }
-        public string PassWord { get; set; }
-        public DateTime CreateTime { get; set; }
-        public bool IsEnabled { get; set; }
         public string Remark { get; set; }
+        public DateTime CreateTime { get; set; }
     }
 }
