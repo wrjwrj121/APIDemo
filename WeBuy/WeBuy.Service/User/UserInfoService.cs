@@ -6,6 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WeBuy.Common;
+using WeBuy.Common.DB;
+using WeBuy.Common.EncryptHelper;
+using WeBuy.Common.MD5;
 using WeBuy.IService.User;
 using WeBuy.Model.User;
 using WeBuyModel.Common;
@@ -38,6 +41,9 @@ namespace WeBuy.Service.User
             {
                 user.CreateTime = DateTime.Now;
                 user.GUID = Guid.NewGuid().ToString();
+
+                user.PassWord = DesEncrypt.Encrypt(user.PassWord);
+                //user.PassWord = MD5Encrypt.Encrypt(user.PassWord);
                 await db.UserInfo.AddAsync(user);
                 await db.SaveChangesAsync();
                 var userInfo = await db.UserInfo.Where(a=> a.GUID == user.GUID).FirstAsync();
@@ -98,6 +104,7 @@ namespace WeBuy.Service.User
             try
             {
                 var user = await db.UserInfo.Where(a => a.GUID == guid).FirstAsync();
+                user.PassWord = DesEncrypt.Decrypt(user.PassWord);
                 result.data = mapper.Map<UserInfoDTO>(user);
                 result.Success();
             }
@@ -115,6 +122,8 @@ namespace WeBuy.Service.User
 
             try
             {
+                user.PassWord = MD5Encrypt.Encrypt(user.PassWord);
+
                 db.UserInfo.Update(user);
                 await  db.SaveChangesAsync();
                 result.Success();
@@ -128,13 +137,16 @@ namespace WeBuy.Service.User
 
         }
 
-        public async Task<PageAPIResult<UserInfoDTO>> Query()
+        public async Task<PageAPIResult<UserInfoDTO>> Query(UserQuery query)
         {
             var users = await db.UserInfo.Where(a => a.IsEnabled == true).ToListAsync();
+            var count = users.Count;
+            users = users.Skip((query.PageIndex - 1) * query.PageSize).Take(query.PageSize).ToList();
             var dto = mapper.Map<List<UserInfoDTO>>(users);
             var result = new PageAPIResult<UserInfoDTO>
             {
-                data = dto
+                data = dto,
+                Count = count
             };
             result.Success();
             return result;

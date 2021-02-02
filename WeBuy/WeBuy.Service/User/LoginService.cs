@@ -14,8 +14,7 @@ using WeBuy.IService.User;
 using WeBuy.Model.User;
 using WeBuyModel.Common;
 using Microsoft.Extensions.Configuration;
-
-
+using WeBuy.Common.MD5;
 
 namespace WeBuy.Service.User
 {
@@ -56,7 +55,8 @@ namespace WeBuy.Service.User
         public async Task<DataAPIResult<LoginDTO>> Login(string userName, string passWord)
         {
             var result = new DataAPIResult<LoginDTO>();
-            var user = await db.UserInfo.Where(a => a.UserName == userName && a.PassWord == passWord).FirstAsync();
+            var md5 = MD5Encrypt.Encrypt(passWord);
+            var user = await db.UserInfo.Where(a => a.UserName == userName && a.PassWord ==md5 ).FirstAsync();
 
             if (user!=null)
             {

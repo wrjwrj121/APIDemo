@@ -17,19 +17,17 @@ namespace WeBuy.Controllers
     [Description("用户")]
     public class UserController : ControllerBase
     {
-        private readonly ILoginService service;
         private readonly IUserInfoService userInfoService;
-        public UserController(ILoginService _service, IUserInfoService _userInfoService)
+        public UserController(IUserInfoService _userInfoService)
         {
-            service = _service;
             userInfoService = _userInfoService;
         }
 
         [HttpGet]
-        public async Task<PageAPIResult<UserInfoDTO>> Query()
+        public async Task<PageAPIResult<UserInfoDTO>> Query([FromQuery]UserQuery query)
         {
             var result = new PageAPIResult<UserInfoDTO>();
-            result = await service.Query();
+            result = await userInfoService.Query(query);
             return result;
         }
 

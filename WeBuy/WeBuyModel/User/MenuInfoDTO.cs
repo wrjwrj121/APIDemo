@@ -8,9 +8,8 @@ namespace WeBuy.Model.User
     /// <summary>
     /// 菜单
     /// </summary>
-     public class MenuInfo
+     public class MenuInfoDTO
     {
-        [Key]
         public string GUID { get; set; }
         public string Name { get; set; }
         public string Icon { get; set; }
@@ -18,6 +17,8 @@ namespace WeBuy.Model.User
         public string ParentID { get; set; }
         public string Remark { get; set; }
         public DateTime CreateTime { get; set; }
+
+        public List<MenuInfoDTO> ChildMenu { get; set; }
 
     }
 }

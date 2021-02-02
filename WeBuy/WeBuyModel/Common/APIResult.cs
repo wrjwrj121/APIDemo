@@ -49,6 +49,7 @@ namespace WeBuyModel.Common
     {
         public int PageIndex { get; set; } = 1;
         public int PageSize { get; set; } = 10;
+        public int Count { get; set; }
 
         public IList<T> data { get; set; }
 

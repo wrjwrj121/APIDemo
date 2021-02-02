@@ -11,6 +11,7 @@ namespace WeBuy.Common.AutoProfile
         public MapperProfile()
         {
             CreateMap<UserInfo, UserInfoDTO>();//ForMember 自定义
+            CreateMap<MenuInfo, MenuInfoDTO>();
         }
     }
 }

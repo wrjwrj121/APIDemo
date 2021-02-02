@@ -9,7 +9,7 @@ namespace WeBuy.IService.User
 {
     public interface IUserInfoService
     {
-        Task<PageAPIResult<UserInfoDTO>> Query();
+        Task<PageAPIResult<UserInfoDTO>> Query(UserQuery query);
         Task<DataAPIResult<UserInfoDTO>> Detail(string guid);
         Task<DataAPIResult<UserInfoDTO>> Add(UserInfo user);
         Task<APIResult> Edit(UserInfo user);
