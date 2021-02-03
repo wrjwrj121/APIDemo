@@ -32,6 +32,7 @@ namespace WeBuy.Service.System
             add.ID = Guid.NewGuid().ToString();
             add.CreateTime = DateTime.Now;
             await db.SystemLog.AddAsync(add);
+        
             await db.SaveChangesAsync();
             var result = new APIResult();
             result.Success();
@@ -43,8 +44,10 @@ namespace WeBuy.Service.System
         /// <returns></returns>
         public async Task<PageAPIResult<SystemLog>> Query()
         {
-            var result = new PageAPIResult<SystemLog>();
-            result.data = new List<SystemLog>();
+            var result = new PageAPIResult<SystemLog>
+            {
+                data = new List<SystemLog>()
+            };
             result.data = await db.SystemLog.ToListAsync();
             result.Success();
             return result;

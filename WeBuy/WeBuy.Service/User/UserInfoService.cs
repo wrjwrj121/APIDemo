@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,10 +20,12 @@ namespace WeBuy.Service.User
     {
         private readonly EFCoreContext db;
         private readonly IMapper mapper;
-        public UserInfoService(EFCoreContext _db,IMapper _mapper) 
+        private readonly ILogger log;
+        public UserInfoService(EFCoreContext _db,IMapper _mapper, ILogger<UserInfoService> _log) 
         {
             db = _db;
             mapper = _mapper;
+            log = _log;
         }
 
         public async Task<DataAPIResult<UserInfoDTO>> Add(UserInfo user)
@@ -52,6 +55,7 @@ namespace WeBuy.Service.User
             }
             catch (Exception ex)
             {
+                log.LogError(ex.Message);
                 result.Fail(ex.Message);
             }
             return result;

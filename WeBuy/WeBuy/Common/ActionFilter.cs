@@ -50,7 +50,7 @@ namespace WeBuy.Common
                     {
                         var httpContext = context.HttpContext;
                         var request = httpContext.Request;
-                        request.Body.Position = 0;
+                        //request.Body.Position = 0;
                         using StreamReader sr = new StreamReader(request.Body);
                         input_json = await sr.ReadToEndAsync();
                     }
