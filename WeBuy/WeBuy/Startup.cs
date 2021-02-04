@@ -4,23 +4,20 @@ using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 using WeBuy.Common;
 using WeBuy.Common.AutoProfile;
+using WeBuy.Controllers.Base;
 
 namespace WeBuy
 {
@@ -64,6 +61,7 @@ namespace WeBuy
             services.AddDbContext<EFCoreContext>(options =>
                   options.UseSqlServer(Configuration.GetConnectionString("SQLStr")));
 
+           
             #region jwt
             //jwt
             //获取配置文件信息，因为是共用的，所以就统一放配置文件了
@@ -102,17 +100,29 @@ namespace WeBuy
             #endregion
 
             //跨域
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy(MyAllowSpecificOrigins,
+
+            //        builder => builder.AllowAnyOrigin()
+
+            //        .WithMethods("GET", "POST", "HEAD", "PUT", "DELETE", "OPTIONS").AllowAnyOrigin()
+
+            //        );
+
+            //});
+
             services.AddCors(options =>
             {
                 options.AddPolicy(MyAllowSpecificOrigins,
 
-                    builder => builder.AllowAnyOrigin()
-
-                    .WithMethods("GET", "POST", "HEAD", "PUT", "DELETE", "OPTIONS")
-
-                    );
+                    builder => builder.WithOrigins("http://localhost:8081")
+                   .AllowAnyHeader()
+                   .WithMethods("GET", "POST", "HEAD", "PUT", "DELETE", "OPTIONS")
+                   .AllowCredentials());
 
             });
+          
 
             //// 注册Swagger服务
             services.AddSwaggerGen(c =>
@@ -154,6 +164,8 @@ namespace WeBuy
                      });
             });
 
+            services.AddSignalR();
+
             services.AddControllers(opt => 
             {
                 opt.Filters.Add<ActionFilter>();
@@ -184,11 +196,14 @@ namespace WeBuy
             app.UseRouting();
             app.UseCors(MyAllowSpecificOrigins);
 
+            //app.UseCors("SignalR");
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<ChatHub>("/chathub");
             });
         }
 
