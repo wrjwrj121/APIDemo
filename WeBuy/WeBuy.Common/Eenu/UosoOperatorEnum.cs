@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WeBuy.Common.Menu
+namespace WeBuy.Common.Eenu
 {
     public enum UosoOperatorEnum
     {

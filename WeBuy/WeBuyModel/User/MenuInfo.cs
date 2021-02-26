@@ -17,6 +17,8 @@ namespace WeBuy.Model.User
         public int Level { get; set; }
         public string ParentID { get; set; }
         public string Remark { get; set; }
+        public string Path { get; set; }
+
         public DateTime CreateTime { get; set; }
 
     }

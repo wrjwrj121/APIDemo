@@ -10,6 +10,7 @@ using WeBuy.Common;
 using WeBuy.Common.DB;
 using WeBuy.Common.EncryptHelper;
 using WeBuy.Common.MD5;
+using WeBuy.IService.Base;
 using WeBuy.IService.User;
 using WeBuy.Model.User;
 using WeBuyModel.Common;
@@ -21,11 +22,13 @@ namespace WeBuy.Service.User
         private readonly EFCoreContext db;
         private readonly IMapper mapper;
         private readonly ILogger log;
-        public UserInfoService(EFCoreContext _db,IMapper _mapper, ILogger<UserInfoService> _log) 
+        private readonly IBaseService baseService;
+        public UserInfoService(EFCoreContext _db,IMapper _mapper, ILogger<UserInfoService> _log, IBaseService _baseService) 
         {
             db = _db;
             mapper = _mapper;
             log = _log;
+            baseService = _baseService;
         }
 
         public async Task<DataAPIResult<UserInfoDTO>> Add(UserInfo user)
@@ -143,9 +146,18 @@ namespace WeBuy.Service.User
 
         public async Task<PageAPIResult<UserInfoDTO>> Query(UserQuery query)
         {
+            var isSys = baseService.IsManager();
             var users = await db.UserInfo.Where(a => a.IsEnabled == true).ToListAsync();
             var count = users.Count;
-            users = users.Skip((query.PageIndex - 1) * query.PageSize).Take(query.PageSize).ToList();
+            if (!string.IsNullOrWhiteSpace(query.Name))
+            {
+                users = users.Where(a=>a.Name.Contains(query.Name)).Skip((query.PageIndex - 1) * query.PageSize).Take(query.PageSize).ToList();
+            }
+            else
+            {
+                users = users.Skip((query.PageIndex - 1) * query.PageSize).Take(query.PageSize).ToList();
+            }
+            
             var dto = mapper.Map<List<UserInfoDTO>>(users);
             var result = new PageAPIResult<UserInfoDTO>
             {

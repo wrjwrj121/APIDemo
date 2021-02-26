@@ -100,29 +100,29 @@ namespace WeBuy
             #endregion
 
             //¿çÓò
-            //services.AddCors(options =>
-            //{
-            //    options.AddPolicy(MyAllowSpecificOrigins,
-
-            //        builder => builder.AllowAnyOrigin()
-
-            //        .WithMethods("GET", "POST", "HEAD", "PUT", "DELETE", "OPTIONS").AllowAnyOrigin()
-
-            //        );
-
-            //});
-
             services.AddCors(options =>
             {
                 options.AddPolicy(MyAllowSpecificOrigins,
 
-                    builder => builder.WithOrigins("http://localhost:8081")
-                   .AllowAnyHeader()
-                   .WithMethods("GET", "POST", "HEAD", "PUT", "DELETE", "OPTIONS")
-                   .AllowCredentials());
+                    builder => builder.AllowAnyOrigin()
+
+                    .WithMethods("GET", "POST", "HEAD", "PUT", "DELETE", "OPTIONS").AllowAnyOrigin()
+
+                    );
 
             });
-          
+
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy(MyAllowSpecificOrigins,
+
+            //        builder => builder.WithOrigins("http://localhost:8081")
+            //       .AllowAnyHeader()
+            //       .WithMethods("GET", "POST", "HEAD", "PUT", "DELETE", "OPTIONS")
+            //       .AllowCredentials());
+
+            //});
+
 
             //// ×¢²áSwagger·þÎñ
             services.AddSwaggerGen(c =>
