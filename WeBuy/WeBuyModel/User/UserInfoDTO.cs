@@ -9,7 +9,7 @@ namespace WeBuy.Model.User
         public string GUID { get; set; }
         public string Name { get; set; }
         public string UserName { get; set; }
-        public string PassWord { get; set; }
+        //public string PassWord { get; set; }//不显示密码
         public DateTime CreateTime { get; set; }
         public bool IsEnabled { get; set; }
         public string Remark { get; set; }

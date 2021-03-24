@@ -110,8 +110,12 @@ namespace WeBuy.Service.User
             };
             try
             {
-                var user = await db.UserInfo.Where(a => a.GUID == guid).FirstAsync();
-                user.PassWord = DesEncrypt.Decrypt(user.PassWord);
+                var user = await db.UserInfo.Where(a => a.GUID == guid).FirstOrDefaultAsync();
+                if (user==null)
+                {
+                    throw new Exception("无此记录。");
+                }
+                //user.PassWord = DesEncrypt.Decrypt(user.PassWord);
                 result.data = mapper.Map<UserInfoDTO>(user);
                 result.Success();
             }
